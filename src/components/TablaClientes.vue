@@ -3,26 +3,25 @@
     <table class="table">
       <thead>
         <tr>
+          <th>Código</th>
           <th>Nombre</th>
           <th>Apellidos</th>
           <th>Email</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Lou</td>
-          <td>Reed</td>
-          <td>lreed@mail.us</td>
-        </tr>
-        <tr>
-          <td>Patti</td>
-          <td>Smith</td>
-          <td>psmith@mail.us</td>
-        </tr>
-        <tr>
-          <td>Janis</td>
-          <td>Joplin</td>
-          <td>jjopline@mail.com</td>
+
+        <tr v-for="cliente in clientes" :key="cliente.id">
+          <td> {{ cliente.id }}</td>
+          <td> {{ cliente.nombre }}</td>
+          <td> {{ cliente.apellidos }}</td>
+          <td> {{ cliente.email }}</td>
+          <td>
+            <button class="btn btn-success">Modificar</button>
+          </td>
+          <td>
+            <button class="btn btn-danger">Eliminar</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -32,6 +31,9 @@
 <script>
 export default {
   name: "tabla-clientes",
+  props: {
+    clientes: Array,
+  }
 }
 </script>
 
