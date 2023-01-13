@@ -7,6 +7,7 @@
           <th>Nombre</th>
           <th>Apellidos</th>
           <th>Email</th>
+          <th>Gestión</th>
         </tr>
       </thead>
       <tbody>
